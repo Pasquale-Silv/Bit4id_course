@@ -27,8 +27,11 @@ def rimuoviContatto(id, nome, dizionario=rubrica):
 
 def elencaContatti(dizionario=rubrica):
     "Mostra tutti i contatti presenti in rubrica."
-    for chiave, valore in dizionario.items():
-        print("id del contatto:", chiave, "\n\t\tDati del contatto:", valore )
+    if(not(dizionario)):
+        print("La rubrica è attualmente vuota.")
+    else:
+        for chiave, valore in dizionario.items():
+            print("id del contatto:", chiave, "\n\t\tDati del contatto:", valore )
 
 def cercaContatto(id, nome, dizionario=rubrica):
     "Cerca un contatto in rubrica mediante suo id e nome."
@@ -49,11 +52,13 @@ def modificaContatto(id, nome, dizionario=rubrica):
                     nuovoValore = input("Inserisci il nuovo valore: ")
                     dizionario[id][modifica] = nuovoValore
             else:
-                print("Matricola esatta...Ma nessun nome corrisponde a quello digitato o semplicemente non è quello associato alla matricola inserita({}), quindi impossibile proseguire.".format(nome))
+                print("Matricola esatta..."
+                      "Ma nessun nome corrisponde a quello digitato o semplicemente non è quello associato "
+                      "alla matricola inserita({}), quindi impossibile proseguire.".format(nome))
         else:
             print("Nessuna matricola corrisponde a quella digitata, ossia matricola digitata:{}.".format(id))
 
         print("Riepilogo del contatto: {}".format(dizionario[id]))
     except KeyError:
-        print("Nella rubrica non è presente la chiave selezionata! id:{} inesistente in rubrica (KeyError evitato)".format(id))
-
+        print("Nella rubrica non è presente la chiave selezionata! id:{} "
+              "inesistente in rubrica (KeyError evitato)".format(id))

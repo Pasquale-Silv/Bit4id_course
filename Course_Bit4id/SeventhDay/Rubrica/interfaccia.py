@@ -81,4 +81,3 @@ def autenticazioneRubrica():
         print("Come desidera,\nOperazione conclusa.")
     else:
         print("Risposta non riconosciuta, inserire solamente i caratteri validi s/n")
-
