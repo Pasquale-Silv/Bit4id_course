@@ -11,6 +11,12 @@ def aggiungiContatto(id, nome, cognome, numero_di_cellulare, dizionario=rubrica)
         return
     dizionario[id] = {"nome":nome, "cognome":cognome, "cell":numero_di_cellulare}
 
+def mostraChiaviRubrica():
+    listaKeys = []
+    for k in rubrica.keys():
+        listaKeys.append(k)
+    return listaKeys
+
 def rimuoviContatto(id, nome, dizionario=rubrica):
     "Rimuove un contatto dalla rubrica."
     if id in dizionario:
@@ -22,7 +28,7 @@ def rimuoviContatto(id, nome, dizionario=rubrica):
 def elencaContatti(dizionario=rubrica):
     "Mostra tutti i contatti presenti in rubrica."
     for chiave, valore in dizionario.items():
-        print("Matricola-chiave del contatto:", chiave, "\n\t\tDati del contatto:", valore )
+        print("id del contatto:", chiave, "\n\t\tDati del contatto:", valore )
 
 def cercaContatto(id, nome, dizionario=rubrica):
     "Cerca un contatto in rubrica mediante suo id e nome."
@@ -50,3 +56,4 @@ def modificaContatto(id, nome, dizionario=rubrica):
         print("Riepilogo del contatto: {}".format(dizionario[id]))
     except KeyError:
         print("Nella rubrica non è presente la chiave selezionata! id:{} inesistente in rubrica (KeyError evitato)".format(id))
+

@@ -1,7 +1,7 @@
 # Rubrica con nome, cognome, numero di cell
 # Aggiungere, rimuovere, cercare, modificare ed elencare contatti
 
-from Course_Bit4id.SeventhDay.Rubrica.funzioni import rimuoviContatto, elencaContatti, cercaContatto, aggiungiContatto, modificaContatto, rubrica
+from Course_Bit4id.SeventhDay.Rubrica.funzioni import rimuoviContatto, elencaContatti, cercaContatto, aggiungiContatto, modificaContatto, rubrica, mostraChiaviRubrica
 
 print("Aggiungi contatti:")
 aggiungiContatto(1 ,"Pasquale", "Silvestre", "3889988765")
@@ -10,6 +10,7 @@ aggiungiContatto(3, "Luca", "Colucci", "3889988765")
 aggiungiContatto(4, "Alfonso", "Silvestre", "3889988765")
 
 print(rubrica)
+print("Chiavi già presenti in rubrica:", mostraChiaviRubrica())
 
 print("\n\nRimozioni:")
 rimuoviContatto(10, "Giacomo")
