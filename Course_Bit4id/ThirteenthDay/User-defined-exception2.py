@@ -1,0 +1,3 @@
+class MyUserDefinedException(Exception):
+    pass
+

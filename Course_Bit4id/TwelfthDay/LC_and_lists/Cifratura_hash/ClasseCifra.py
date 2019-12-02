@@ -1,0 +1,2 @@
+class ClasseCifra():
+    pass
